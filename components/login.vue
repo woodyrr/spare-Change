@@ -12,21 +12,7 @@ const loggedInUser = ref(null);
 const email = ref('');
 const password = ref('');
 
-const login = async () => {
-  try {
-    await account.createEmailPasswordSession(email.value, password.value);
-    loggedInUser.value = await account.get();
-    router.push("/home");
-  } catch (e) {
-    console.log(e);
-    alert('Invalid email or password');
-  }
-};
 
-// const logout = async () => {
-//   await account.deleteSession('current');
-//   loggedInUser.value = null;
-// };
 </script>
 
 <template>
@@ -67,7 +53,10 @@ const login = async () => {
           <Button type="submit" class="w-full bg-green-600 hover:bg-green-500" @click="login">
             Login
           </Button>
-          <Button type="submit"  class=""  @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })">
+          <Button type="submit"  class=""  
+          
+          >
+          <!-- @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })" -->
               Login  with github
           </Button>
         </div>
@@ -121,7 +110,8 @@ const login = async () => {
           <Button type="submit" class="w-full bg-green-500" @click="login">
             Create an account
           </Button>
-          <Button type="submit"  class=""  @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })">
+          <Button type="submit"  class="">
+            <!-- @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })" -->
               sign up with github
           </Button>
         </div>

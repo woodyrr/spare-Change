@@ -13,17 +13,22 @@
 
 const router = useRouter();
 const loggedInUser = ref(null);
-const client = useSupabaseClient()
-const user = useSupabaseUser()
+// const client = useSupabaseClient()
+// const user = useSupabaseUser()
+const user = false
 const logout = async () => {
-  await client.auth.signOut()
-  navigateTo('/')
+//   await client.auth.signOut()
+//   navigateTo('/')
+    console.log("logout")
 }
 
   // import History from '~/pages/history.vue'
-const userName = user.value?.user_metadata.user_name
-const userAvatar = user.value?.user_metadata.avatar_url
-const name = user.value?.user_metadata.name
+// const userName = user.value?.user_metadata.user_name
+// const userAvatar = user.value?.user_metadata.avatar_url
+// const name = user.value?.user_metadata.name
+const userName = 'test'
+const userAvatar = 'test'
+const name = 'test'
 </script>
 
 <template>

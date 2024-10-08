@@ -1,12 +1,13 @@
 <template>
+  <!-- v-if="user" -->
   <div class="">
-    <SideBar v-if="user" class="w-full">
+    <SideBar  class="w-full">
           <NuxtPage />
     </SideBar>
-    <div class="bg-foreground" v-else>
-      <!-- <Login /> -->
+    <!-- <div class="bg-foreground" v-else>
+       <Login />
       <Error />
-    </div>
+    </div> -->
     <!-- <Login /> -->
     
   </div>
@@ -15,7 +16,7 @@
 import Error from './components/error.vue';
 import Login from './components/login.vue';
 
-const user = useSupabaseUser()
+// const user = useSupabaseUser()
 
 // const links = [{
 //   id: 'home',
