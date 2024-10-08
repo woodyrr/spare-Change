@@ -53,13 +53,13 @@ const name = 'test'
 
           <nav class="grid items-start px-2 text-sm font-medium lg:px-4">
 
-            <NuxtLink
-              to="/history"
+            <a
+                href="#"
               class="flex items-center gap-3 bg-muted rounded-lg px-3 py-3 text-primary  transition-all hover:text-primary"
             >
               <Home class="h-4 w-4" />
               Home
-            </NuxtLink>
+            </a>
             <a
               href="#"
               class="flex items-center gap-3 rounded-lg px-3 py-3 text-muted-foreground transition-all hover:text-primary"
@@ -128,13 +128,13 @@ const name = 'test'
           <SheetContent side="left" class="flex flex-col px-[6%]">
 
             <nav class="grid gap-2 text-lg font-medium text-black">
-              <NuxtLink
-              to="/history"
+              <a
+                href="#"
               class="flex items-center gap-3 rounded-lg  px-3 py-3 text-muted-foreground transition-all hover:text-primary"
             >
               <Home class="h-5 w-5" />
               Home
-            </NuxtLink>
+            </a>
               <a
                 href="#"
                 class="flex items-center gap-3 rounded-lg  px-3 py-3 text-muted-foreground transition-all hover:text-primary"
