@@ -187,9 +187,9 @@ const name = user.value?.user_metadata.name
 
         <Sheet class="">
             <SheetTrigger as-child>
-                <Button variant="default"  class="bg-clear hover:bg-clear flex gap-1 p-0">
+                <button variant="default"  class="bg-transparent hover:bg-transparent flex  gap-1 p-0">
                 <img v-if="userAvatar" :src="userAvatar" alt="" srcset="" class="h-10 w-10 md:h-10 md:w-10 rounded-full border border-green-200 ">
-                <CircleUser v-else class="h-10 w-10 md:h-10 md:w-10 rounded-full border border-green-200 " />
+                <CircleUser v-else class="h-8 w-8 md:h-8 md:w-8 rounded-full border-none  text-gray-500" />
                 </Button>
             </SheetTrigger>
             <SheetContent class="w-[320px] md:w-[38%] flex flex-col gap-4 rounded-l-xl">
@@ -249,7 +249,7 @@ const name = user.value?.user_metadata.name
                 <SheetFooter class="">
                 <div class="flex flex-col gap-2 pt-2 w-full text-right">
                     <div class="border"></div>
-                    <Button class="flex gap-2 items-center w-full duration-150 hover:bg-gray-200 py-2 px-1 rounded-lg text-gray-700 text-[14px]" @click="logout">
+                    <Button class=" text-white flex gap-2 items-center w-full duration-150 hover:bg-[rgba(17,19,32,0.8)] py-2 px-1 rounded-lg text-[14px]" @click="logout">
                       <LogOut class="w-4 h-4" />
                       SignOut
                     </Button>

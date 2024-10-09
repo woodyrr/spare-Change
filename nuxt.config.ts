@@ -7,11 +7,9 @@ export default defineNuxtConfig({
   css: [
     '@/assets/main.css',
   ],
-  // '@nuxt/ui','@nuxtjs/tailwindcss',
   runtimeConfig: {
     public: {
-      // baseUrl: 'http://localhost:3000',
-      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+      baseUrl: process.env.BASE_URL,
     },
   },
   
@@ -31,7 +29,6 @@ export default defineNuxtConfig({
       org: "woody-ramey",
       project: "node",
       authToken: process.env.SENTRY_AUTH_TOKEN,
-      // authToken: import.meta.env.SENTRY_AUTH_TOKEN,
       
     },
   },

@@ -14,7 +14,6 @@
   </div>
 </template>
 <script setup>
-import Error from './components/error.vue';
 import Login from './components/login.vue';
 
 const user = useSupabaseUser()
