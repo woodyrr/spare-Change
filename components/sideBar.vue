@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
   import { BadgeHelp, Bell, CirclePlus, CircleUser, Coins, CookingPot, CreditCard, DollarSign, Heart, HistoryIcon, Home, LineChart, LogOut, Menu, Package, Package2, PersonStanding,  Settings,  ShoppingCart, SmilePlus, Star, User, Users } from 'lucide-vue-next'
 
@@ -9,26 +8,21 @@
 //   import PresetShare from '@/components/PresetShare.vue'
   import { Input } from '@/components/ui/input'
   import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-  // import { account } from '@/lib/appwrite';
 
-const router = useRouter();
-const loggedInUser = ref(null);
-// const client = useSupabaseClient()
-// const user = useSupabaseUser()
-const user = false
+const client = useSupabaseClient()
+const user = useSupabaseUser()
+
 const logout = async () => {
-//   await client.auth.signOut()
-//   navigateTo('/')
-    console.log("logout")
+  await client.auth.signOut()
+  navigateTo('/')
+    // console.log("logout")
 }
 
   // import History from '~/pages/history.vue'
-// const userName = user.value?.user_metadata.user_name
-// const userAvatar = user.value?.user_metadata.avatar_url
-// const name = user.value?.user_metadata.name
-const userName = 'test'
-const userAvatar = 'test'
-const name = 'test'
+const userName = user.value?.user_metadata.user_name
+const userAvatar = user.value?.user_metadata.avatar_url
+const name = user.value?.user_metadata.name
+
 </script>
 
 <template>
