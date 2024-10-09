@@ -1,16 +1,22 @@
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Input from './ui/input/Input.vue';
+import { Github } from 'lucide-vue-next';
+const user = useSupabaseUser()
+const client = useSupabaseClient()
+const redirectTo = `${useRuntimeConfig().public.baseUrl}/confirm`
 
+watchEffect(() => {
+  if (user.value) {
+    navigateTo('/confirm')
+  }
+})
 let log = ref(true)
-let sign = ref(false)
-const router = useRouter();
-const loggedInUser = ref(null);
-const email = ref('');
 const password = ref('');
+
+const email = ref('')
 
 
 </script>
@@ -31,7 +37,7 @@ const password = ref('');
       </CardHeader>
       <CardContent>
         <div class="grid gap-4">
-          <div class="grid gap-2">
+          <!-- <div class="grid gap-2">
             <Label for="email">Email</Label>
             <Input
               id="email"
@@ -40,7 +46,7 @@ const password = ref('');
               v-model="email"
               required
             />
-          </div>
+          </div> 
           <div class="grid gap-2">
             <div class="flex items-center">
               <Label for="password">Password</Label>
@@ -49,16 +55,16 @@ const password = ref('');
               </a>
             </div>
             <Input id="password" type="password" placeholder="Enter your password" v-model="password" required />
-          </div>
-          <Button type="submit" class="w-full bg-green-600 hover:bg-green-500" @click="login">
+          </div> 
+           <Button type="submit" class="w-full bg-green-600 hover:bg-green-500" @click="signInWithOtp()">
             Login
-          </Button>
-          <Button type="submit"  class=""  
-          
+          </Button> -->
+
+          <Button type="submit"  class="flex" @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })"  
           >
-          <!-- @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })" -->
               Login  with github
           </Button>
+          
         </div>
         
         <div class="mt-4 text-center text-sm">
@@ -110,8 +116,8 @@ const password = ref('');
           <Button type="submit" class="w-full bg-green-500" @click="login">
             Create an account
           </Button>
-          <Button type="submit"  class="">
-            <!-- @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })" -->
+          <Button type="" @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })"  class="">
+            
               sign up with github
           </Button>
         </div>

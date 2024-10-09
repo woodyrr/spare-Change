@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+// console.log(`${useRuntimeConfig().public.baseUrl}`)
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -9,8 +10,8 @@ export default defineNuxtConfig({
   // '@nuxt/ui','@nuxtjs/tailwindcss',
   runtimeConfig: {
     public: {
-      baseUrl: 'http://localhost:3000',
-      // baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+      // baseUrl: 'http://localhost:3000',
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     },
   },
   
@@ -18,6 +19,9 @@ export default defineNuxtConfig({
     redirectOptions: {
       login: '/',
       callback: '/confirm',
+      include: undefined,
+      exclude: [],
+      cookieRedirect: false,
     },
   },
 
