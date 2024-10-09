@@ -249,9 +249,9 @@ const name = user.value?.user_metadata.name
                 <SheetFooter class="">
                 <div class="flex flex-col gap-2 pt-2 w-full text-right">
                     <div class="border"></div>
-                    <Button class="flex gap-2 items-center w-full bg-transparent duration-150 hover:bg-gray-100 py-2 px-1 rounded-lg text-gray-700 text-[14px]" @click="logout">
-                    <LogOut class="w-4 h-4" />
-                    SignOut
+                    <Button class="flex gap-2 items-center w-full duration-150 hover:bg-gray-200 py-2 px-1 rounded-lg text-gray-700 text-[14px]" @click="logout">
+                      <LogOut class="w-4 h-4" />
+                      SignOut
                     </Button>
                 </div>
                 </SheetFooter>
