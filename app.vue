@@ -1,7 +1,7 @@
 <template>
   <!--  -->
   <div class="">
-    <SideBar  v-if="!user"  class="w-full">
+    <SideBar  v-if="user"  class="w-full">
           <NuxtPage />
     </SideBar>
   
