@@ -1,12 +1,16 @@
 <script setup lang="ts">
 const user = useSupabaseUser()
 // const supabase = useSupabaseUser
+const router = useRouter()
 // supabase.auth.getUser()
 import { Skeleton } from '@/components/ui/skeleton'
 
 watch(user, () => {
   if (user.value) {
     return navigateTo('/')
+//     runtime-core.esm-bundler.js:1595 Hydration completed but contains mismatches.
+// Ar	@	runtime-core.esm-bundler.js:1595
+// Show less
   }
 }, { immediate: true })
 </script>

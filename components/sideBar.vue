@@ -249,7 +249,7 @@ const name = user.value?.user_metadata.name
                 <SheetFooter class="">
                 <div class="flex flex-col gap-2 pt-2 w-full text-right">
                     <div class="border"></div>
-                    <Button class=" text-white flex gap-2 items-center w-full duration-150 hover:bg-[rgba(17,19,32,0.8)] py-2 px-1 rounded-lg text-[14px]" @click="logout">
+                    <button class=" text-white flex gap-2 items-center w-full duration-150 bg-[rgb(49,97,57)] hover:bg-[rgb(68,83,71)] py-2 justify-center px-1 rounded-lg text-[14px]" @click="logout">
                       <LogOut class="w-4 h-4" />
                       SignOut
                     </Button>

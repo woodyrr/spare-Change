@@ -1,7 +1,6 @@
 <template>
     <div  class="w-full">
         <BanksInfo />
-        
     </div>
 </template>
 
