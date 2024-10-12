@@ -6,8 +6,8 @@ import Input from './ui/input/Input.vue';
 import { Github } from 'lucide-vue-next';
 const user = useSupabaseUser()
 const client = useSupabaseClient()
-const redirectTo = `${useRuntimeConfig().public.baseUrl}/confirm`
-
+const loginRedirectTo = `${useRuntimeConfig().public.baseUrl}/confirmLog`
+const registerRedirectTo = `${useRuntimeConfig().public.baseUrl}/confirmSign`
 watchEffect(() => {
   if (user.value) {
     navigateTo('/confirm')
@@ -18,6 +18,15 @@ const password = ref('');
 
 const email = ref('')
 
+async function signUpNewUser() {
+  const { data, error } = await client.auth.signUp({
+    email: email.value,
+    password: password.value,
+    options: {
+      emailRedirectTo: 'https://example.com/welcome',
+    },
+  })
+}
 
 </script>
 
@@ -37,7 +46,7 @@ const email = ref('')
       </CardHeader>
       <CardContent>
         <div class="grid gap-4">
-          <!-- <div class="grid gap-2">
+          <div class="grid gap-2">
             <Label for="email">Email</Label>
             <Input
               id="email"
@@ -56,11 +65,11 @@ const email = ref('')
             </div>
             <Input id="password" type="password" placeholder="Enter your password" v-model="password" required />
           </div> 
-           <Button type="submit" class="w-full bg-green-600 hover:bg-green-500" @click="signInWithOtp()">
+           <button type="submit" class="w-full p-2 rounded-lg text-white font-medium  bg-green-500" @click="signInWithOtp()">
             Login
-          </Button> -->
+          </button>
 
-          <Button type="submit"  class="flex" @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })"  
+          <button type="submit"  class="w-full p-2 rounded-lg text-white font-medium  bg-[rgb(18,41,49)]" @click="client.auth.signInWithOAuth({ provider: 'github', options: { registerRedirectTo } })"  
           >
               Login  with github
           </Button>
@@ -113,13 +122,13 @@ const email = ref('')
             </div>
             <Input id="password" type="password" placeholder="Confirm password" v-model="password" required />
           </div>
-          <Button type="submit" class="w-full bg-green-500" @click="login">
+          <button type="submit" class="w-full p-2 rounded-lg text-white font-medium  bg-green-500" @click="login">
             Create an account
-          </Button>
-          <Button type="" @click="client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo } })"  class="">
+          </button>
+          <button type="" @click="client.auth.signInWithOAuth({ provider: 'github', options: { registerRedirectTo} })"  class="w-full p-2 rounded-lg text-white font-medium  bg-[rgb(18,41,49)]">
             
               sign up with github
-          </Button>
+          </button>
         </div>
         <div class="mt-4 text-center text-sm">
           already have an account?

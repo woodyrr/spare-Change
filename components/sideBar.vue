@@ -45,7 +45,7 @@ const name = user.value?.user_metadata.name
 
         <div class="flex-1">
 
-          <nav class="grid items-start px-2 text-sm font-medium lg:px-4">
+          <nav class="grid items-start px-2 text-sm font-medium lg:px-3">
 
             <a
                 href="#"
@@ -119,12 +119,12 @@ const name = user.value?.user_metadata.name
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="left" class="flex flex-col px-[6%]">
+          <SheetContent side="left" class="flex flex-col px-[2%] ">
 
-            <nav class="grid gap-2 text-lg font-medium text-black">
+            <nav class="grid gap-2 text-base font-medium text-black pt-4">
               <a
                 href="#"
-              class="flex items-center gap-3 rounded-lg  px-3 py-3 text-muted-foreground transition-all hover:text-primary"
+              class="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary bg-gray-100"
             >
               <Home class="h-5 w-5" />
               Home
@@ -159,7 +159,7 @@ const name = user.value?.user_metadata.name
               </a>
             </nav>
 
-            <div class="mt-auto">
+            <div class="m-auto">
               <Card>
                 <CardHeader>
                   <CardTitle>GAMBLING PROBLEM?</CardTitle>

@@ -1,17 +1,17 @@
 
-import { createError } from 'h3'
+// import { createError } from 'h3'
 
-import { serverSupabaseUser, serverSupabaseClient } from '#supabase/server'
+// import { serverSupabaseUser, serverSupabaseClient } from '#supabase/server'
 
-export default defineEventHandler(async (event) => {
+// export default defineEventHandler(async (event) => {
   
-  const user = await serverSupabaseUser(event)
-  const client = await serverSupabaseClient(event)
-  if (!user) {
-    throw createError({
-      statusCode: 401,
-      statusMessage: 'User not authenticated',
-    })
-  }
-    return user
-})
+//   const user = await serverSupabaseUser(event)
+//   const client = await serverSupabaseClient(event)
+//   if (!user) {
+//     throw createError({
+//       statusCode: 401,
+//       statusMessage: 'User not authenticated',
+//     })
+//   }
+//     return user
+// })
